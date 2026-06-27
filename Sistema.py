@@ -12,10 +12,38 @@ class Sistema:
         ]
         self.pacientes = []
 
-    def registrar_paciente(self, nombre, edad):
-        
+
+    def menu_visual(self):
+        print("=== SISTEMA MÉDICO VIRTUAL (MODO POO) ===")
+        print("1. Registrar nuevo paciente")
+        print("2. Mostrar pacientes en memoria")
+        print("3. Asignar hora")
+        print("4. Guardar y Salir")
+        print("=========================================")
+   
+
+    def registrar_paciente(self):
+
+        while True:
+            nombre = input("Ingrese su nombre: ").strip()
+            if nombre.replace(" ", "").isalpha() and nombre != "" and len(nombre) > 0:
+                break
+            else:
+                print("No se permiten números, espacios ni símbolos.\n")
+
+        while True:
+            try:
+                edad = int(input("Ingrese su edad: "))
+                if 0 <= edad <= 120:
+                    break
+                else:
+                    print("Error: La edad debe estar entre 0 y 120 años.")
+            except ValueError:
+                print("¡Edad inválida!")
+
         paciente = Paciente(nombre, edad)
         self.pacientes.append(paciente)
+        print(f"¡Paciente {nombre} registrado con éxito!")
 
     def mostrar_pacientes(self):
 

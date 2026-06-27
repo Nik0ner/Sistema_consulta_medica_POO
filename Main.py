@@ -11,13 +11,7 @@ ejecutando = True
 
 while ejecutando:
 
-    print("=== SISTEMA MÉDICO VIRTUAL (MODO POO) ===")
-    print("1. Registrar nuevo paciente")
-    print("2. Mostrar pacientes en memoria")
-    print("3. Asignar hora")
-    print("4. Guardar y Salir")
-    print("=========================================")
-    
+    sistema.menu_visual()
     opcion = input("Seleccione una opción (1-3): ")
     
     if opcion == "1":
@@ -25,14 +19,7 @@ while ejecutando:
         os.system("cls")
         print("--- REGISTRO DE PACIENTE ---")
 
-        nombre = str(input("Ingrese su nombre: "))
-        try:
-            edad = int(input("Ingrese su edad: "))
-        except ValueError:
-            edad = 0
-            print("¡Edad inválida! Se registrará como 0.")
-
-        sistema.registrar_paciente(nombre, edad)
+        sistema.registrar_paciente()
 
         input("\nPresiona Enter para volver al menú...")
         os.system("cls")
