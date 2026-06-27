@@ -1,0 +1,2 @@
+# Sistema de Gestión de Consulta Médica
+Este es un software desarrollado en Python que utiliza Programación Orientada a Objetos (POO) para gestionar de forma modular el flujo de pacientes, registros clínicos y validación de datos en una consulta médica.
